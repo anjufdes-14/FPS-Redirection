@@ -1,0 +1,55 @@
+{
+  "name": "fps-redirection-frontend1",
+  "version": "1.0.1",
+  "description": "Frontend and backend project for FPS redirection - Force Vercel Deployment",
+  "main": "src/backend/server.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "node src/backend/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run start\"",
+    "vercel-build": "react-scripts build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@clerk/clerk-react": "^5.46.2",
+    "@gegeweb/leaflet-routing-machine-openroute": "^0.1.10",
+    "axios": "^1.11.0",
+    "bootstrap": "^5.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.0.1",
+    "leaflet": "^1.9.4",
+    "leaflet-routing-machine": "^3.2.12",
+    "openrouteservice-js": "^0.4.1",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^7.8.2",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^3.5.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:5001"
+}

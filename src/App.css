@@ -1,0 +1,332 @@
+@import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
+
+/* Your existing App.css styles below */
+.App {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.fps-status-open {
+  color: #198754;
+  font-weight: bold;
+}
+/* ... rest of your existing styles ... */
+
+.App {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.fps-status-open {
+  color: #198754;
+  font-weight: bold;
+}
+
+.fps-status-closed {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.table-responsive {
+  border-radius: 0.375rem;
+}
+
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-header {
+  background-color: #e9ecef;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.leaflet-container {
+  border-radius: 0.375rem;
+  border: 1px solid #dee2e6;
+}
+
+.leaflet-popup-content h6 {
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Custom scrollbar */
+.table-responsive::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* ===== MOBILE AND TABLET RESPONSIVE STYLES ===== */
+
+/* Mobile phones (max-width: 576px) */
+@media (max-width: 576px) {
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .card {
+    margin-bottom: 15px;
+  }
+  
+  .card-body {
+    padding: 1rem 0.75rem;
+  }
+  
+  .leaflet-container {
+    height: 300px !important;
+    min-height: 300px;
+  }
+  
+  .btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-group .btn {
+    border-radius: 0.375rem !important;
+    margin-bottom: 0.25rem;
+  }
+  
+  .form-control, .form-select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 0.75rem;
+  }
+  
+  .table {
+    font-size: 0.875rem;
+  }
+  
+  .table th, .table td {
+    padding: 0.5rem 0.25rem;
+    white-space: nowrap;
+  }
+  
+  .table-responsive {
+    font-size: 0.75rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  h5 {
+    font-size: 1rem;
+  }
+  
+  .row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  
+  .col, .col-md-6, .col-lg-4, .col-lg-6, .col-lg-8 {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 15px;
+  }
+  
+  /* File upload areas */
+  .upload-area {
+    padding: 1rem;
+    text-align: center;
+    border: 2px dashed #dee2e6;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Status indicators */
+  .status-indicator {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  /* Alerts */
+  .alert {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Tablets portrait (577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .leaflet-container {
+    height: 400px !important;
+    min-height: 400px;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+  
+  .table {
+    font-size: 0.9rem;
+  }
+  
+  .table th, .table td {
+    padding: 0.6rem 0.4rem;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  
+  .col-md-6 {
+    margin-bottom: 20px;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+}
+
+/* Tablets landscape (769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .leaflet-container {
+    height: 450px !important;
+    min-height: 450px;
+  }
+  
+  .table {
+    font-size: 0.95rem;
+  }
+  
+  .btn {
+    font-size: 0.95rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Touch-friendly improvements for all mobile devices */
+@media (max-width: 992px) {
+  /* Larger touch targets */
+  .btn, .form-control, .form-select {
+    min-height: 44px; /* Apple's recommended minimum touch target */
+  }
+  
+  /* Better spacing */
+  .mb-3 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Improved form layouts */
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  /* Better card spacing */
+  .card {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Improved table scrolling */
+  .table-responsive {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better popup sizes for leaflet */
+  .leaflet-popup-content {
+    margin: 8px 12px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  
+  /* Improved loading spinner */
+  .loading-overlay .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  /* Better status indicators */
+  .badge {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.5rem;
+  }
+  
+  /* Improved navigation */
+  .navbar-nav {
+    text-align: center;
+  }
+  
+  /* Better form file inputs */
+  .form-control[type="file"] {
+    padding: 0.375rem 0.75rem;
+  }
+  
+  /* Improved button groups */
+  .btn-toolbar {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Better progress bars */
+  .progress {
+    height: 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Improved dropdown menus */
+  .dropdown-menu {
+    font-size: 0.875rem;
+  }
+  
+  /* Better modal dialogs */
+  .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100vw - 1rem);
+  }
+  
+  /* Improved offcanvas */
+  .offcanvas {
+    max-width: 90vw;
+  }
+}
